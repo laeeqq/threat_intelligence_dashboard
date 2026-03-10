@@ -2,11 +2,12 @@ from flask import Flask, jsonify
 import pandas as pd
 import requests
 import os
+import sqlite3
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv() # Load environment variables from .env file
 
-app = Flask(__name__)
+app = Flask(__name__) #Create Flask app instance
 
 API_KEY = os.getenv("ABUSEIPDB_KEY")
 
