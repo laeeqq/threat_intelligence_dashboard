@@ -61,6 +61,21 @@ def save_threats(df):
     conn.commit() # Save all inserts permanently in one go
     conn.close() # Close connection to free up memory
     print(f"Saved {saved} threats to database")
+    
+def get_stats():
+    conn = sqlite3.connect(DB_PATH) # Open connection using absolute path
+    
+    df = pd.read_sql_query("SELECT * FROM threats", conn) # Load all threat data into a DataFrame
+
+    conn.close()
+
+    if df.empty:
+        return {"error: NO data in database yet"}
+    
+    stats = {
+        "total_threats": len(df), # Total number of threats in the database
+        "top_countries": df["country_code"].value_counts().head(10).# Top 10 countries with the most threats
+    }
 
 def fetch_blacklist():
    
