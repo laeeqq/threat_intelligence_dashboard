@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template # Importing Flask for web framework, jsonify to convert Python data to JSON format, and request to handle incoming HTTP requests.
 import pandas as pd
 import requests
 import os # Importing the os module to access environment variables, which is essential for securely managing sensitive information like API keys.
@@ -114,7 +114,7 @@ def fetch_blacklist():
 
 @app.route("/") # Route for the home page
 def home():
-    return "Threat Dashboard is live!"
+    return render_template("index.html") # Render the index.html template
 
 @app.route("/api/threats") # Route that returns threat data as JSON
 
