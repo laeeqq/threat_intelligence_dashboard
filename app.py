@@ -18,12 +18,16 @@ def init_db():
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS threats (
              id INTEGER PRIMARY KEY AUTOINCREMENT,
-                 
-                   
-                   
+                ip_address TEXT NOT NULL,
+                country TEXT,
+                abuse_score INTEGER,
+                last_reported TEXT,
+                saved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP    
                    )
                    
-                    """)                                                                
+                    """)   
+    conn.commit()
+    conn.close()                                                             
 
 def fetch_blacklist():
     url = "https://api.abuseipdb.com/api/v2/blacklist" #Stores the API endpoint URL for fetching the blacklist data from AbuseIPDB.
@@ -54,4 +58,5 @@ def threats():
     return jsonify(df.to_dict(orient="records"))  #Convert the DataFrame to a list of dictionaries (records) and return it as JSON response.
 
 if __name__ == "__main__":
+    init_db() #Initialize the database when the application starts.
     app.run(debug=True)
