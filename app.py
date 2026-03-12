@@ -11,11 +11,25 @@ app = Flask(__name__) #Create Flask app instance
 
 API_KEY = os.getenv("ABUSEIPDB_KEY")
 
+
+def init_db():
+    conn = sqlite3.connect("threats.db")
+    cursor = conn.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS threats (
+             id INTEGER PRIMARY KEY AUTOINCREMENT,
+                 
+                   
+                   
+                   )
+                   
+                    """)                                                                
+
 def fetch_blacklist():
     url = "https://api.abuseipdb.com/api/v2/blacklist" #Stores the API endpoint URL for fetching the blacklist data from AbuseIPDB.
     headers = {
         "Key": API_KEY,
-        "Accept": "application/json"
+        "Accept": "application/json"                                                                   
     }
     params = {"limit": 100}
 
