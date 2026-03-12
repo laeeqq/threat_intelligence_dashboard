@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat Intelligence Dashboard</title>
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <script src="/static/js/dashboard.js" defer></script>
+</head>
+<body>
+    <div class ="header">
+        <h1>Threat Intelligence Dashboard</h1>
+        <p>Live malicious IP addresses tracking powered by AbuseIPDB</p>
+
+    </div>
+
+    <div class = "cards">
+
+        <div class = "card">
+            <h3>Total Threats</h3>
+            <div class = "value" id="total-threats">Loading...</div>
+        </div>
+    
+
+        <div class = "card">
+            <h3>Average Abuse Score</h3>
+            <div class = "value" id = "avg-score">...</div>
+        </div>
+
+        <div class="card">
+                <h3>Latest Threat</h3>
+                <div class="value" id="latest-threat">...</div>
+        </div>
+    </div>
+
+    <div class = "content">
+        <div class = "chart-container">
+            <h2> Top Attacking Countries</h2>
+            <canvas id ="countryChart"></canvas>
+        </div>
+        
+        <div class = "table-container">
+            <h2>Live Threat Feed</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>IP Address</th>
+                        <th>Country</th>
+                        <th>Abuse Score</th>
+                        <th>Last Reported</th>
+                    </tr>
+                </thead>
+                <tbody id ="threats-table">
+                   <tr><td colspan ="4" class ="loading" >Loading threats...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
