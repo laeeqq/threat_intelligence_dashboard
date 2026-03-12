@@ -16,6 +16,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "threats.db")
 
 def init_db():
+
     conn = sqlite3.connect(DB_PATH) # Open connection using absolute path
     cursor = conn.cursor() # Create cursor object to execute SQL commands
     
@@ -52,7 +53,7 @@ def save_threats(df):
                 row["countryCode"], # Country the IP is from
                 row["abuseConfidenceScore"], # How dangerous the IP is 0-100
                 row["lastReportedAt"] # When the IP was last reported as malicious
-            )) # INSERT OR IGNORE skips duplicates instead of crashing
+            )) 
             
             saved += 1 # Increment counter for each successful insert
         except Exception as e:
@@ -74,8 +75,23 @@ def get_stats():
     
     stats = {
         "total_threats": len(df), # Total number of threats in the database
-        "top_countries": df["country_code"].value_counts().head(10).# Top 10 countries with the most threats
-    }
+        
+        "top_countries": df["country_code"].value_counts().head(10).to_dict(),# Top 10 countries with the most threats
+
+        "average_abuse_score": round(df["abuse_score"].mean(),2), # Average abuse score of all threats
+
+        "threats_by_score": df["abuse_score"] # Take the abuse_score column
+            .value_counts() # Count how many IPs have each score
+            .to_dict(), # Convert to dictionary
+
+
+        "latest_threat": df.sort_values("saved_at") # Sort by when we saved it
+            .tail(1) # Get the last row (most recent)
+            [["ip_address", "country_code", "abuse_score"]] # Only keep these columns
+            .to_dict(orient="records")[0] # Convert to a single dictionary
+    } 
+
+    return stats # Return the stats dictionary  
 
 def fetch_blacklist():
    
@@ -91,6 +107,8 @@ def fetch_blacklist():
     
     if "data" not in data:
         return None, data # If something went wrong return the error info
+    
+    
     df = pd.DataFrame(data["data"]) # Convert the list of IPs into a pandas DataFrame
     return df, None # Return the DataFrame and no error
 
@@ -100,13 +118,23 @@ def home():
 
 @app.route("/api/threats") # Route that returns threat data as JSON
 
+@app.route("/api/stats") # Route that returns statistics about the threats in the database
+def stats():
+    result = get_stats()
+    return jsonify(result)
+
 def threats():
     df, error = fetch_blacklist() # Fetch live threat data from AbuseIPDB
+   
     if error:
         return jsonify({"error": error}), 400 # Return error as JSON with 400 status code
+    
     save_threats(df) # Save the fetched threat data to the SQLite database
+   
     return jsonify(df.to_dict(orient="records")) # Convert DataFrame to JSON and return it
 
 if __name__ == "__main__":
+    
     init_db() # Initialize the database when the application starts
+    
     app.run(debug=True)
