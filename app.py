@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 import os # Importing the os module to access environment variables, which is essential for securely managing sensitive information like API keys.
 import sqlite3
-from dotenv import load_dotenv
+from dotenv import load_dotenv #required to load environment variables from a .env file, allowing you to keep sensitive information like API keys out of your codebase and manage them securely.
 
 load_dotenv() # Load environment variables from .env file
 
@@ -28,7 +28,7 @@ def fetch_blacklist():
     df = pd.DataFrame(data["data"])
     return df, None
 
-@app.route("/")
+@app.route("/") #Define a route for the home page of the Flask application. When a user accesses the root URL ("/"), this function will be executed.
 def home():
     return "Threat Dashboard is live!"
 
