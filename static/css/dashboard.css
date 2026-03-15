@@ -59,6 +59,63 @@ body {
 
 }
 
+.chart-container, .table-container {
+    background-color: #161b22;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+.chart-container h2, .table-container h2 {
+    font-size: 14px;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+thead tr {
+    background-color: #0d1117;
+}
+
+th {
+    padding: 10px;
+    text-align: left;
+    color: #8b949e;
+    font-weight: normal;
+    border-bottom: 1px solid #30363d;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #21262d;
+    color: #e6edf3;
+}
+
+tr:hover {
+    background-color: #21262d;
+}
+
+.badge {
+    background-color: #f85149;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+}
+
+.loading {
+    color: #8b949e;
+    text-align: center;
+    padding: 20px;
+}
+
 
 
 
