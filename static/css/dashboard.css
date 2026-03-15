@@ -42,7 +42,23 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 10px;
-    
+
 }
+
+.card .value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #f85149;
+
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap:15px;
+
+}
+
+
 
 
