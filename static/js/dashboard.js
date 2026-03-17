@@ -10,4 +10,41 @@ async function loadDashboard() {
         stats.latest_threat.ip_address + ' (' + stats.latest_threat.country_code + ')';
 
     const countries = Object.keys(stats.top_countries);
-    const c
+    const counts = Object.values(stats.top_countries);
+
+
+    new Chart(document.getElementById('countryChart'), {
+        type: 'bar',
+        data: {
+            labels: countries,
+            datasets: [{ // array of data series to plot 
+                label: 'Threats',
+                data: counts,
+                backgroundColor: '#f85149',
+                borderRadius: 4
+            }]
+        },
+
+        options: { //customize the chart's appearance and behavior
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                x: {
+                    ticks: {color : '#8b949e'},
+                    grid: {color : '#21262d'}
+                }
+
+                y: {
+                    ticks: {color : '#8b949e'},
+                    grid: {color : '#21262d'}
+                }
+            }
+        }
+    });
+
+
+
+}
+ 
+
