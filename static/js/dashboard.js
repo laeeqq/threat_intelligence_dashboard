@@ -44,6 +44,15 @@ async function loadDashboard() {
     });
 
 
+    const threatsResponse = await fetch('/api/threats');
+    const threats = await threatsResponse.json();
+
+    const tbody = document.getElementById('threats-table');
+    tbody.innerHTML = ''; //clears the loading message by setting the inner html to empty
+    
+    
+
+
 
 }
  
