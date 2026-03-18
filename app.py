@@ -117,12 +117,6 @@ def home():
     return render_template("index.html") # Render the index.html template
 
 @app.route("/api/threats") # Route that returns threat data as JSON
-
-@app.route("/api/stats") # Route that returns statistics about the threats in the database
-def stats():
-    result = get_stats()
-    return jsonify(result)
-
 def threats():
     df, error = fetch_blacklist() # Fetch live threat data from AbuseIPDB
    
@@ -132,6 +126,13 @@ def threats():
     save_threats(df) # Save the fetched threat data to the SQLite database
    
     return jsonify(df.to_dict(orient="records")) # Convert DataFrame to JSON and return it
+
+@app.route("/api/stats") # Route that returns statistics about the threats in the database
+def stats():
+    result = get_stats()
+    return jsonify(result)
+
+
 
 if __name__ == "__main__":
     
