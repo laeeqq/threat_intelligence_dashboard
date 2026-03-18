@@ -4,9 +4,9 @@ async function loadDashboard() {
 
     const stats = await statsResponse.json();
 
-    document.getElementById('total-users').textContent = stats.total_threats;
+    document.getElementById('total-threats').textContent = stats.total_threats;
     document.getElementById('avg-score').textContent = stats.average_abuse_score;
-    document.getElementById('latest-threats').textContent = 
+    document.getElementById('latest-threat').textContent = 
         stats.latest_threat.ip_address + ' (' + stats.latest_threat.country_code + ')';
 
     const countries = Object.keys(stats.top_countries);
@@ -33,7 +33,7 @@ async function loadDashboard() {
                 x: {
                     ticks: {color : '#8b949e'},
                     grid: {color : '#21262d'}
-                }
+                },
 
                 y: {
                     ticks: {color : '#8b949e'},
@@ -56,7 +56,7 @@ async function loadDashboard() {
         row.innerHTML = `
         <td>${threat.ipAddress}</td>
         <td>${threat.countryCode}</td>
-        td><span class="badge">${threat.abuseConfidenceScore}</span></td>
+        <td><span class="badge">${threat.abuseConfidenceScore}</span></td>
             <td>${threat.lastReportedAt.split('T')[0]}</td>
         `;
         tbody.appendChild(row);
@@ -64,7 +64,6 @@ async function loadDashboard() {
     
 
 }
-
 loadDashboard();
  
 
