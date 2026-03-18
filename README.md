@@ -50,6 +50,12 @@ python3 app.py
 
 ---
 
+dashboard.png
+
+
+
+
+
 ## Author
 Laeeq — Cybersecurity student building real SOC tools from scratch
 EOF
