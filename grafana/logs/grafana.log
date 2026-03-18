@@ -1850,3 +1850,62 @@ logger=context userId=1 orgId=1 uname=admin t=2026-03-17T19:02:47.227308845-06:0
 logger=plugin.frser-sqlite-datasource t=2026-03-17T19:03:53.619666248-06:00 level=info msg="Creating instance"
 logger=plugin.frser-sqlite-datasource t=2026-03-17T19:03:53.620687017-06:00 level=info msg="Plugin Request Completed" duration=1.109001ms pluginId=frser-sqlite-datasource pluginVersion=4.0.1 status=ok uname=admin endpoint=checkHealth statusSource=plugin dsName=frser-sqlite-datasource dsUid=dfgcas4xcdp1cb
 logger=infra.usagestats t=2026-03-17T19:04:14.709826506-06:00 level=info msg="Usage stats are ready to report"
+logger=plugin.frser-sqlite-datasource t=2026-03-17T19:06:10.744087143-06:00 level=info msg="Plugin Request Completed" dsName=frser-sqlite-datasource duration=2.759372ms endpoint=queryData pluginVersion=4.0.1 status=ok uname=admin dsUid=dfgcas4xcdp1cb pluginId=frser-sqlite-datasource statusSource=plugin
+logger=plugin.frser-sqlite-datasource t=2026-03-17T19:06:34.801976165-06:00 level=info msg="Plugin Request Completed" duration=2.178902ms endpoint=queryData pluginVersion=4.0.1 status=ok dsName=frser-sqlite-datasource dsUid=dfgcas4xcdp1cb pluginId=frser-sqlite-datasource statusSource=plugin uname=admin
+logger=plugin.frser-sqlite-datasource t=2026-03-17T19:06:52.768322879-06:00 level=info msg="Plugin Request Completed" endpoint=queryData pluginId=frser-sqlite-datasource status=ok statusSource=plugin dsName=frser-sqlite-datasource pluginVersion=4.0.1 uname=admin dsUid=dfgcas4xcdp1cb duration=2.410936ms
+logger=plugin.frser-sqlite-datasource t=2026-03-17T19:07:01.41620233-06:00 level=info msg="Plugin Request Completed" dsName=frser-sqlite-datasource pluginId=frser-sqlite-datasource status=ok dsUid=dfgcas4xcdp1cb duration=2.293768ms endpoint=queryData pluginVersion=4.0.1 statusSource=plugin uname=admin
+logger=plugin.frser-sqlite-datasource t=2026-03-17T19:07:16.012926405-06:00 level=info msg="Plugin Request Completed" pluginId=frser-sqlite-datasource status=ok uname=admin dsName=frser-sqlite-datasource dsUid=dfgcas4xcdp1cb duration=2.130879ms endpoint=queryData pluginVersion=4.0.1 statusSource=plugin
+logger=context userId=1 orgId=1 uname=admin t=2026-03-17T19:08:57.749567259-06:00 level=info msg="Request Completed" method=POST path=/apis/dashboard.grafana.app/v1beta1/namespaces/default/dashboards status=201 remote_addr=127.0.0.1 time_ms=36 duration=36.652192ms size=5439 referer="http://127.0.0.1:3000/dashboard/new?editPanel=1&from=now-6h&orgId=1&timezone=browser&to=now" handler=/apis/* status_source=server
+logger=live t=2026-03-17T19:08:58.009979339-06:00 level=info msg="Initialized channel handler" channel=grafana/dashboard/uid/adkckzp address=grafana/dashboard/uid/adkckzp
+logger=plugin.frser-sqlite-datasource t=2026-03-17T19:08:58.186139191-06:00 level=info msg="Plugin Request Completed" dsUid=dfgcas4xcdp1cb pluginId=frser-sqlite-datasource statusSource=plugin duration=1.397436ms endpoint=queryData pluginVersion=4.0.1 status=ok uname=admin dsName=frser-sqlite-datasource
+logger=plugin.frser-sqlite-datasource t=2026-03-17T19:10:31.003662309-06:00 level=info msg="Plugin Request Completed" dsName=frser-sqlite-datasource dsUid=dfgcas4xcdp1cb endpoint=queryData status=ok duration=1.954779ms pluginId=frser-sqlite-datasource pluginVersion=4.0.1 statusSource=plugin uname=admin
+logger=plugin.frser-sqlite-datasource t=2026-03-17T19:11:52.417778741-06:00 level=info msg="Plugin Request Completed" endpoint=queryData pluginId=frser-sqlite-datasource uname=admin dsName=frser-sqlite-datasource dsUid=dfgcas4xcdp1cb pluginVersion=4.0.1 status=ok statusSource=plugin duration=1.522249ms
+logger=sqlstore.transactions t=2026-03-17T19:12:42.716493014-06:00 level=info msg="Database locked, sleeping then retrying" error="database is locked" retry=0
+logger=cleanup t=2026-03-17T19:12:42.756124269-06:00 level=info msg="Completed cleanup jobs" duration=51.196662ms
+logger=plugins.update.checker t=2026-03-17T19:12:43.061830135-06:00 level=info msg="Update check succeeded" duration=144.912098ms
+logger=plugin.frser-sqlite-datasource t=2026-03-17T19:13:28.292305394-06:00 level=info msg="Plugin Request Completed" pluginId=frser-sqlite-datasource status=ok statusSource=plugin dsUid=dfgcas4xcdp1cb pluginVersion=4.0.1 uname=admin dsName=frser-sqlite-datasource duration=1.310066ms endpoint=queryData
+logger=plugin.frser-sqlite-datasource t=2026-03-17T19:13:32.733672152-06:00 level=info msg="Plugin Request Completed" status=ok statusSource=plugin dsName=frser-sqlite-datasource dsUid=dfgcas4xcdp1cb duration=2.926994ms pluginVersion=4.0.1 uname=admin endpoint=queryData pluginId=frser-sqlite-datasource
+logger=plugin.frser-sqlite-datasource t=2026-03-17T19:13:47.26363812-06:00 level=info msg="Plugin Request Completed" duration=3.273129ms endpoint=queryData pluginId=frser-sqlite-datasource statusSource=plugin dsUid=dfgcas4xcdp1cb pluginVersion=4.0.1 status=ok uname=admin dsName=frser-sqlite-datasource
+logger=server t=2026-03-17T19:15:31.418922079-06:00 level=info msg="Shutdown started" reason="System signal: interrupt"
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419090152-06:00 level=info msg="module stopped" module=*pluginexternal.Service
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419102875-06:00 level=info msg="module stopped" module=*service.UsageStats
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419151444-06:00 level=info msg="module stopped" module=*dualwrite.ZanzanaReconciler
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419176158-06:00 level=info msg="module stopped" module=*metrics.InternalMetricsService
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419165054-06:00 level=info msg="module stopped" module=*service.DashboardServiceImpl
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419208403-06:00 level=info msg="module stopped" module=*ssosettingsimpl.Service
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419199988-06:00 level=info msg="module stopped" module=*remotecache.RemoteCache
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419262284-06:00 level=info msg="module stopped" module=*api.HTTPServer
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419277569-06:00 level=info msg="module stopped" module=*cleanup.CleanUpService
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419252001-06:00 level=info msg="module stopped" module=*updatemanager.PluginsService
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419308113-06:00 level=info msg="module stopped" module=*pushhttp.Gateway
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.41921387-06:00 level=info msg="module stopped" module=*loginattemptimpl.Service
+logger=ngalert.scheduler t=2026-03-17T19:15:31.419312175-06:00 level=info msg=stopped component=ticker last_tick=2026-03-17T19:15:30-06:00
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419234325-06:00 level=info msg="module stopped" module=*metric.Service
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419234316-06:00 level=info msg="module stopped" module=*updatemanager.GrafanaService
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419369312-06:00 level=info msg="module stopped" module=*store.standardStorageService
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419370892-06:00 level=info msg="module stopped" module=*garbagecollectionworker.Worker
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419379423-06:00 level=info msg="module stopped" module=*migrations.SecretMigrationProviderImpl
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419399489-06:00 level=info msg="module stopped" module=*authimpl.UserAuthTokenService
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419392874-06:00 level=info msg="module stopped" module=*service.DashboardUpdater
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419261702-06:00 level=info msg="module stopped" module=*supportbundlesimpl.Service
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419301691-06:00 level=info msg="module stopped" module=*dynamic.KeyRetriever
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419438305-06:00 level=info msg="module stopped" module=*anonimpl.AnonDeviceService
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419399915-06:00 level=info msg="module stopped" module=*notifications.NotificationService
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419417834-06:00 level=info msg="module stopped" module=*manager.ServiceAccountsService
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419466965-06:00 level=info msg="module stopped" module=*rendering.RenderingService
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419473617-06:00 level=info msg="module stopped" module=*live.GrafanaLive
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419466971-06:00 level=info msg="module stopped" module=*appregistry.Service
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419491229-06:00 level=info msg="module stopped" module=*statscollector.Service
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419511627-06:00 level=info msg="module stopped" module=*angulardetectorsprovider.Dynamic
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419530279-06:00 level=info msg="module stopped" module=*manager.SecretsService
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.419538437-06:00 level=info msg="module stopped" module=*store.dummyEntityEventsService
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.4293166-06:00 level=info msg="module stopped" module=*ngalert.AlertNG
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.42953094-06:00 level=info msg="module stopped" module=provisioning
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.429620601-06:00 level=info msg="module stopped" module=plugin.backgroundinstaller
+logger=plugin.frser-sqlite-datasource t=2026-03-17T19:15:31.433252742-06:00 level=info msg="plugin process exited" plugin=/home/laeeq/threat-dashboard/grafana/plugins/frser-sqlite-datasource/gpx_sqlite-datasource_linux_amd64 id=40901
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.433403822-06:00 level=info msg="module stopped" module=plugins.store
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.433493818-06:00 level=info msg="module stopped" module=grafana-apiserver
+logger=grafana-apiserver t=2026-03-17T19:15:31.433552057-06:00 level=info msg="StorageObjectCountTracker pruner is exiting"
+logger=tracing t=2026-03-17T19:15:31.433600423-06:00 level=info msg="Closing tracing"
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.433646094-06:00 level=info msg="module stopped" module=tracing
+logger=backgroundsvcs.managerAdapter t=2026-03-17T19:15:31.433674668-06:00 level=info msg="All modules stopped"
