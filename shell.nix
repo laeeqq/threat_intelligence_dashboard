@@ -8,5 +8,6 @@ pkgs.mkShell {
     pkgs.python3Packages.numpy
     pkgs.python3Packages.requests
     pkgs.python3Packages.python-dotenv
+    pkgs.grafana
   ];
 }
