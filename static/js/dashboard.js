@@ -50,10 +50,21 @@ async function loadDashboard() {
     const tbody = document.getElementById('threats-table');
     tbody.innerHTML = ''; //clears the loading message by setting the inner html to empty
     
+
+    threats.forEach(threat => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+        <td>${threat.ipAddress}</td>
+        <td>${threat.countryCode}</td>
+        td><span class="badge">${threat.abuseConfidenceScore}</span></td>
+            <td>${threat.lastReportedAt.split('T')[0]}</td>
+        `;
+        tbody.appendChild(row);
+    });
     
 
-
-
 }
+
+loadDashboard();
  
 
